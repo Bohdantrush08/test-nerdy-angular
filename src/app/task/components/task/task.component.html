@@ -1,0 +1,12 @@
+<div class="sidenav">
+
+  <ul class = "unmarkedList">
+    <li *ngFor="let task of tasks">
+      <button class="category-button" (click)="getText(task.id)">{{task?.name}}</button>
+    </li>
+  </ul>
+<div>
+
+</div>
+
+</div>

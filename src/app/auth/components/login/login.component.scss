@@ -1,0 +1,71 @@
+
+
+.center-position {
+  position: absolute;
+  height: 250px;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.register-link{
+  color: grey;
+  position: absolute;
+  left: 300px;
+  top: -193px;
+  font-size: 85%;
+}
+
+.btn-get-started{
+  position: absolute;
+  left: 490px;
+  top: -200px;
+  padding: 6px 30px;
+  font-size: 85%;
+  border-radius: 0 0 0 0;
+}
+
+.forgotten-password-link{
+  color:blue;
+  position: absolute;
+  left: 340px;
+  top: 160px;
+  font-size: 70%;
+}
+
+.label {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: white;
+  background-color: red;
+  font-size: 120%;
+  padding: 23px 72px;
+}
+
+.form-control{
+  border-radius: 0 0 0 0;
+}
+
+.email-label{
+  font-weight: bold;
+  font-size: 65%;
+}
+
+.password-label{
+  font-weight: bold;
+  font-size: 65%;
+}
+
+.btn-login{
+  font-size: 70%;
+  padding: 10px;
+  border-radius: 0 0 0 0;
+}
+
+.form-control{
+  padding: 20px;
+  font-size: 85%;
+}

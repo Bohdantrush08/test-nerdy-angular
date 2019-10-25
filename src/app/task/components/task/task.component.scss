@@ -1,0 +1,110 @@
+.sidenav {
+  height: 90%; /* Full-height: remove this if you want "auto" height */
+  width: 1800px; /* Set the width of the sidebar */
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  top: 75px; /* Stay at the top */
+  left: 0;
+  background-color: #ffffff; /* White*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 30px;
+}
+.unmarkedList{
+  list-style: none;
+}
+.sidenav li {
+  padding: 0px 30px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+}
+
+.category-button{
+  color: #818181;
+  background: none;
+  border: none;
+}
+
+.category-button:hover {
+  color: #F0051C;
+}
+
+.fa-twitter{
+
+  color:black;
+  background-color: white;
+  font-size: 20px;
+  border: none;
+}
+.fa-facebook{
+  color:black;
+  background-color: white;
+  font-size: 20px;
+  border: none;
+}
+.fa-google{
+  color:black;
+  background-color: white;
+  font-size: 20px;
+  border: none;
+}
+.fa-youtube{
+
+  color:black;
+  background-color: white;
+  font-size: 20px;
+  border: none;
+}
+.label-follow{
+  font-size: 14px;
+  position: fixed;
+  left: 70px;
+}
+.follow{
+  position: fixed;
+  left: 60px;
+}
+
+.view{
+  height: 90%; /* Full-height: remove this if you want "auto" height */
+  width: 3800px; /* Set the width of the sidebar */
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  top: 75px; /* Stay at the top */
+  left: 300px;
+  background-color: #ffff3f; /* White*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 30px;
+}
+.url{
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  left: 20%;
+  top: 20%;
+}
+
+.title{
+  position: absolute;
+  left: 300px;
+  top: 460px;
+}
+.text{
+  position: absolute;
+  left: 300px;
+  top: 500px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*.flex-container > div {*/
+/*    width: 100px;*/
+/*    margin: 10px;*/
+/*    left:300px;*/
+/*    text-align: center;*/
+/*    line-height: 75px;*/
+/*    font-size: 30px;*/
+/*}*/

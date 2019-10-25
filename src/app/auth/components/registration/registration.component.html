@@ -1,0 +1,38 @@
+
+    <div class="col-lg-4 offset-4 cont" >
+      <h3 class="title">Create Account</h3>
+
+      <div class = "form-group">
+        <label for = "exampleInputName" class = "name-label"> <b>Name</b></label>
+        <input type = "string" class = "form-control" id = "exampleInputName"
+
+               placeholder="Bohdan" [(ngModel)]="registrationForm.name">
+      </div>
+
+
+
+      <div class = "form-group">
+        <label for = "exampleInputSurname" class = "surname-label"> <b>Surame</b></label>
+        <input type = "string" class = "form-control" id = "exampleInputSurname"
+               placeholder="Trush" [(ngModel)]="registrationForm.surname">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class ="email-label"><b>Email</b></label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+               placeholder="Email@gmail.com" [(ngModel)]="registrationForm.email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class ="password-label"><b>Password</b></label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password"
+               [(ngModel)]="registrationForm.password">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2" class ="password-label"> <b>Confirm password</b></label>
+        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password"
+               [(ngModel)]="registrationForm.confirmPassword">
+      </div>
+      <button [routerLink]="['/login']" class="btn-login btn-block btn-danger" (click)="doRegistration()">SIGN UP</button>
+    </div>
+    <button [routerLink]="['/login']" type="button" class="btn-get-started btn-outline-danger btn-lg">Log In</button>
+    <a href="/login" class="register-link">Already have an account?</a>
+
