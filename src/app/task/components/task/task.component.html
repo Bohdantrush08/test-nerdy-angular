@@ -1,12 +1,47 @@
+<h4 class="first-h">Crete new task</h4>
+<hr class="line1">
+
+<div >
+  <input type="text" class="name-input" id="headline" placeholder="Name"  [(ngModel)]="taskForm.name">
+</div>
+
+<div class="form-group">
+  <textarea class="text-input" id="context" rows="8" placeholder="Please add task description here"  [(ngModel)]="taskForm.text"></textarea>
+</div>
+<div class="label">
+  <button  class="add-btn btn-danger" (click)="createTask() " >Create Task</button>
+</div>
+
+<h4 class="second-h">List of tasks</h4>
+
+<hr class="line2">
+
 <div class="sidenav">
 
   <ul class = "unmarkedList">
-    <li *ngFor="let task of tasks">
-      <button class="category-button" (click)="getText(task.id)">{{task?.name}}</button>
+    <li *ngFor="let task of tasks" data-id ="{{task.id}}" >
+      <button class="category-button  "   [ngClass]="selectedTask == task.id ? 'active' : '' "(click)="getText(task.id); selectTask(task.id); selectName(task.name)" >
+        {{task?.name}}
+      </button>
     </li>
   </ul>
 <div>
 
 </div>
+    <textarea class="text " placeholder="Click at the task to see task descripton here" [value]="task?.text"  [(ngModel)]="taskFormUpd.text" >
+      </textarea>
+
+
+  <div >
+    <button   class="update-btn btn-danger" (click)="updateTask() " >Update Task</button>
+  </div>
+
+  <div >
+    <button   class="delete-btn btn-danger" (click)="deleteTask() " >Delete Task</button>
+  </div>
+
 
 </div>
+
+
+

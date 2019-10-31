@@ -6,16 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {RouterModule, Routes} from '@angular/router';
 import {RegistrationComponent} from './components/registration/registration.component';
-import {LoginComponent} from './components/login/login.component';
+import {AuthLoginComponent} from './components/login/login.component';
 
 const  appRoutes: Routes = [
       {path: 'registration', component: RegistrationComponent},
-       {path: 'login', component: LoginComponent}
+       {path: 'login', component: AuthLoginComponent}
 
 ];
 @NgModule({
   declarations: [
-    RegistrationComponent, LoginComponent
+    RegistrationComponent, AuthLoginComponent
   ],
   imports: [ CommonModule,
     BrowserModule,
@@ -24,7 +24,7 @@ const  appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   exports: [
-    RegistrationComponent, LoginComponent
+    RegistrationComponent, AuthLoginComponent
   ],
   providers: [],
 })

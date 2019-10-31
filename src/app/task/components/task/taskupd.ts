@@ -1,4 +1,4 @@
-export class Task {
+export class TaskUpd {
   id: number;
   name: string;
   text: string;

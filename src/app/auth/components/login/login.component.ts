@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class AuthLoginComponent implements OnInit {
 
   private userLogin = new UserLogin();
 
@@ -18,9 +18,10 @@ export class LoginComponent implements OnInit {
   }
 
   public doLogin = () => {
-    this.requestService.doPost('authenticate', this.userLogin, new HttpHeaders()).subscribe(
-      (success) => {
-        localStorage.setItem('token', success.body['token']);
+    this.requestService.doPostLogin('authenticate', this.userLogin, new HttpHeaders()).subscribe(
+      (data: any) => {
+        sessionStorage.setItem('token', data.body['token']);
+        sessionStorage.setItem('username', data.body['username']);
         setTimeout(() => {
           this.router.navigate(['/task']);
         }, 1000);
