@@ -9,6 +9,7 @@ import {RegistrationComponent} from './components/registration/registration.comp
 import {AuthLoginComponent} from './components/login/login.component';
 
 const  appRoutes: Routes = [
+       {path: '', component: AuthLoginComponent},
       {path: 'registration', component: RegistrationComponent},
        {path: 'login', component: AuthLoginComponent}
 

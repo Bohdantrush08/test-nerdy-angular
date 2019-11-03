@@ -1,7 +1,6 @@
 <div class="col-lg-4 offset-4" >
   <br>
   <div class="form-group">
-    <a href="forgot_password" class="forgotten-password-link">Forgot password?</a>
     <label for="exampleInputEmail1" class ="email-label">EMAIL ADDRESS</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
            placeholder="Email@gmail.com" [(ngModel)]="userLogin.username">
@@ -12,7 +11,8 @@
            [(ngModel)]="userLogin.password">
   </div>
   <button  class="btn-login btn-block btn-danger" (click)="doLogin()">LOG IN</button>
+  <a href="/registration">Don't have an account? -> Register</a>
+
 </div>
-<button [routerLink]="['/auth/registration']" type="button" class="btn-get-started btn-outline-danger btn-lg">Get Started</button>
-<a href="/registration" class="register-link">Don't have an account?</a>
+
 
