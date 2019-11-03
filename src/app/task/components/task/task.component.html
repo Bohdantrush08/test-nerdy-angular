@@ -1,6 +1,8 @@
 <h4 class="first-h">Crete new task</h4>
-<hr class="line1">
+<h5 class="attention">Only authorized user can see list of tasks or add a new one!</h5>
+<h5 class="username"> {{userEmail}}</h5>
 
+<hr class="line1">
 <div >
   <input type="text" class="name-input" id="headline" placeholder="Name"  [(ngModel)]="taskForm.name">
 </div>
@@ -40,8 +42,23 @@
     <button   class="delete-btn btn-danger" (click)="deleteTask() " >Delete Task</button>
   </div>
 
+  <div >
+    <button   class="share-btn btn-danger" (click)="openForm(); getUsers()" >Share Task</button>
+  </div>
 
+  <div class="form-popup" id="myForm">
+    <h5>Choose user to share</h5>
+
+    <ul class = "unmarkedList">
+        <li *ngFor="let user of users" data-id ="{{user.email}}" >
+          <button class="category-button  "   [ngClass]="selectedUser == user.email ? 'active' : '' "(click)=" selectUser(user.email); selectTaskText(task.text); selectTask(task.id); selectName(task.name)" >
+            {{user?.email}}
+          </button>
+        </li>
+      </ul>
+      <div>
+        <button class="submit-btn btn-danger" (click)="shareTask() " >Submit </button>
+      </div>
+  </div>
 </div>
-
-
 

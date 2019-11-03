@@ -5,6 +5,7 @@ import {HttpHeaders} from '@angular/common/http';
 import {TaskUpd} from './taskupd';
 import {UserLogin} from '../../../auth/components/login/login';
 import {Authdata} from './authdata';
+import {User} from './user';
 
 @Component({
   selector: 'app-task',
@@ -18,17 +19,34 @@ export class TaskComponent implements OnInit {
   private errorMessage: string = "";
   private successMessage: string = "";
   private selectedTask: number = -1;
+  private selectedTaskText: string = "";
+  private userEmail: string = sessionStorage.getItem('username');
+  private selectedUser: string = "";
+
   private selectedName: string ="";
   tasks: Task[] = [];
   task: Task;
+  users: User[] = [];
   username: UserLogin;
   constructor(private requestService: RequestService) {
   }
 
+  openForm(){
+    document.getElementById('myForm').style.display = 'block';
+  }
 
   selectTask = (id) => {
     this.selectedTask = id;
   };
+
+  selectTaskText = (text) => {
+    this.selectedTaskText = text;
+  };
+  selectUser = (email) => {
+    this.selectedUser = email;
+  };
+
+
   selectName = (name) => {
     this.selectedName = name;
   };
@@ -47,6 +65,15 @@ export class TaskComponent implements OnInit {
     })
     ;
   }
+
+  getUsers(){
+    this.requestService.doGet('account', new HttpHeaders()).subscribe((data: any) => {
+      this.users = data;
+      console.log(this.users);
+    })
+    ;
+  }
+
   getText(id: number) {
     this.requestService.doGet('task/' + id, new HttpHeaders()).subscribe((data: any) => {
       this.task = data;
@@ -81,6 +108,27 @@ export class TaskComponent implements OnInit {
     }
   }
 
+  shareTask = () => {
+    if (this.validateView(this.taskForm)) {
+      this.taskFormUpd.id = this.selectedTask;
+      this.taskFormUpd.userEmail = this.selectedUser;
+      this.taskFormUpd.name = this.selectedName;
+      this.taskFormUpd.text = this.selectedTaskText;
+      this.requestService.doPost('task', this.taskFormUpd, new HttpHeaders()).subscribe(
+        (success) => {
+          this.successMessage = 'Task shared, redirect to login page';
+
+          this.taskForm.text = "";
+          this.taskForm.name = "";
+          window.location.reload();
+        },
+        (error) => {
+          console.log(error);
+          alert("Error");
+        }
+      );
+    }
+  }
   updateTask = (id: number) => {
     this.taskFormUpd.id = this.selectedTask;
     this.taskFormUpd.name = this.selectedName;
@@ -117,7 +165,6 @@ export class TaskComponent implements OnInit {
       }
     );
   }
-
 
 
   validateView = (taskForm: Task) => {
