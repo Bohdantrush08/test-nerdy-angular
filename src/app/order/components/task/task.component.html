@@ -1,20 +1,20 @@
-<h4 class="first-h">Crete new task</h4>
-<h5 class="attention">Only authorized user can see list of tasks or add a new one!</h5>
+<h4 class="first-h">Request medical help </h4>
+<!--<h5 class="attention">Only authorized user can see list of requests or add a new one!</h5>-->
 <h5 class="username"> {{userEmail}}</h5>
 
 <hr class="line1">
 <div >
-  <input type="text" class="name-input" id="headline" placeholder="Name"  [(ngModel)]="taskForm.name">
+  <input type="text" class="name-input" id="headline" placeholder="Short description"  [(ngModel)]="taskForm.name">
 </div>
 
 <div class="form-group">
-  <textarea class="text-input" id="context" rows="8" placeholder="Please add task description here"  [(ngModel)]="taskForm.text"></textarea>
+  <textarea class="text-input" id="context" rows="8" placeholder="Please describe your illness here"  [(ngModel)]="taskForm.text"></textarea>
 </div>
 <div class="label">
-  <button  class="add-btn btn-danger" (click)="createTask() " >Create Task</button>
+  <button  class="add-btn btn-primary" (click)="createTask() " >Request Help</button>
 </div>
 
-<h4 class="second-h">List of tasks</h4>
+<h4 class="second-h">Your requests</h4>
 
 <hr class="line2">
 
@@ -30,21 +30,21 @@
 <div>
 
 </div>
-    <textarea class="text " placeholder="Click at the task to see task descripton here" [value]="task?.text"  [(ngModel)]="taskFormUpd.text" >
+    <textarea class="text " placeholder="Click at the order to see order descripton here" [value]="task?.text"  [(ngModel)]="taskFormUpd.text" >
       </textarea>
 
 
   <div >
-    <button   class="update-btn btn-danger" (click)="updateTask() " >Update Task</button>
+    <button   class="update-btn btn-primary" (click)="updateTask() " >Update Request</button>
   </div>
 
   <div >
-    <button   class="delete-btn btn-danger" (click)="deleteTask() " >Delete Task</button>
+    <button   class="delete-btn btn-primary" (click)="deleteTask() " >Delete Request</button>
   </div>
 
-  <div >
-    <button   class="share-btn btn-danger" (click)="openForm(); getUsers()" >Share Task</button>
-  </div>
+<!--  <div >-->
+<!--    <button   class="share-btn btn-primary" (click)="openForm(); getUsers()" >Share Request</button>-->
+<!--  </div>-->
 
   <div class="form-popup" id="myForm">
     <h5>Choose user to share</h5>

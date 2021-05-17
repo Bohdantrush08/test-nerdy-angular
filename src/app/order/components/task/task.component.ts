@@ -6,6 +6,7 @@ import {TaskUpd} from './taskupd';
 import {UserLogin} from '../../../auth/components/login/login';
 import {Authdata} from './authdata';
 import {User} from './user';
+import {Category} from "./category";
 
 @Component({
   selector: 'app-task',
@@ -28,6 +29,8 @@ export class TaskComponent implements OnInit {
   task: Task;
   users: User[] = [];
   username: UserLogin;
+  // categories: Category[] = [];
+
   constructor(private requestService: RequestService) {
   }
 
@@ -50,7 +53,7 @@ export class TaskComponent implements OnInit {
   selectName = (name) => {
     this.selectedName = name;
   };
-  // if u need to get all task, put what inside getAllTasks into ngOnInit()
+  // if u need to get all order, put what inside getAllTasks into ngOnInit()
   getAllTasks(){
     this.requestService.doGet( 'task', new HttpHeaders()).subscribe((data: any) => {
       this.tasks = data;
@@ -161,7 +164,7 @@ export class TaskComponent implements OnInit {
       },
       (error) => {
         console.log(error);
-        alert("Error,choose task to delete");
+        alert("Error,choose order to delete");
       }
     );
   }
